@@ -1,0 +1,20 @@
+{
+  "name": "iepm-ticket-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IEPM Ticket System for Netlify + Supabase deployment",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx netlify dev",
+    "dev": "npx netlify dev",
+    "build": "echo \"Static Netlify build ready\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.36.0"
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEPM Ticket System</title>
+<meta name="description" content="Internal ticketing and asset support platform for IEPM operations.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/supportdesk.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230A333F'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>I</text></svg>">
+</head>
+<body>
+<div id="auth-screen" class="auth-screen"></div>
+<div id="app" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">I</div>
+      <div class="brand-text"><strong>IEPM</strong><span>Operations Console</span></div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">✕</button>
+    </div>
+    <div class="user-mini" id="userMini"></div>
+    <nav class="nav" id="mainNav"></nav>
+    <div class="sidebar-foot">
+      <div class="sla-mini" id="slaMini"></div>
+      <button class="btn btn-ghost btn-sm" id="logoutBtn2">Log out</button>
+    </div>
+  </aside>
+  <div class="main-wrap">
+    <header class="topbar">
+      <button class="icon-btn hamburger" id="hamburger" aria-label="Menu">☰</button>
+      <div class="topbar-title"><b>Dashboard</b><span>Operations overview</span></div>
+      <div class="search-box"><span>🔍</span><input id="globalSearch" type="search" placeholder="Search"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn hide-m" id="refreshBtn" aria-label="Refresh" title="Refresh">⟳</button>
+        <button class="btn btn-outline btn-sm hide-m" id="exportBtn">⭳ Export</button>
+        <button class="btn btn-primary btn-sm" id="newTicketBtn" aria-label="Chat with system admin on WhatsApp" title="Chat with system admin on WhatsApp">💬</button>
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications">🔔<span class="dot" id="notifDot"></span></button>
+        <div class="notif-panel hidden" id="notifPanel"></div>
+        <div class="profile-chip" id="profileChip"></div>
+      </div>
+    </header>
+    <main class="content" id="content"></main>
+  </div>
+</div>
+<div id="modalRoot"></div>
+<div id="toastRoot" class="toast-root"></div>
+<nav class="bottom-nav" id="bottomNav"><div class="bn-grid">
+<button class="bn-item" data-pg="dashboard"><i>◧</i>Home</button>
+<button class="bn-item" data-pg="tickets"><i>▤</i>Tickets</button>
+<button class="bn-item" data-pg="new"><span class="bn-fab">＋</span>New</button>
+<button class="bn-item" data-pg="assets"><i>🖥</i>Assets</button>
+<button class="bn-item" data-pg="mytickets"><i>◉</i>Mine</button>
+</div></nav>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/app.js"></script>
+<script src="js/supportdesk-ui.js"></script>
+<script src="js/auth-fix.js"></script>
+<script src="js/google-auth.js"></script>
+<script src="js/whatsapp-button.js"></script>
+</body>
+</html>
